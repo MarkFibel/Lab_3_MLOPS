@@ -24,8 +24,8 @@ def eval_metrics(actual, pred):
     return rmse, mae, r2
 
 if __name__ == "__main__":
-    df = pd.read_csv("./df_clear.csv")  # Укажи путь к твоему датасету
-    target_column = "Target"  # Замени на имя целевой переменной
+    df = pd.read_csv("data/processed_data.csv")
+    target_column = "Survived"
     X, Y, power_trans = scale_frame(df, target_column)
     X_train, X_val, y_train, y_val = train_test_split(X, Y, test_size=0.3, random_state=42)
     
